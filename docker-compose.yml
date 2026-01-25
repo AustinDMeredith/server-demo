@@ -1,0 +1,7 @@
+services:
+  demo-2:
+    build: .
+    container_name: demo-2
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
