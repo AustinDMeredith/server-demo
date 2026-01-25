@@ -1,18 +1,31 @@
+name: CD (Deploy)
+
+on:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
 jobs:
   deploy:
     runs-on: self-hosted
+
     steps:
-      - name: Update repo in docker apps folder
+      - name: Update app repo in docker folder
         run: |
           APP_DIR="$HOME/docker/apps/demo-2"
+
           if [ ! -d "$APP_DIR/.git" ]; then
             git clone https://github.com/OWNER/REPO.git "$APP_DIR"
           fi
+
           cd "$APP_DIR"
-          git fetch --all
+          git fetch origin
           git reset --hard origin/main
 
-      - name: Rebuild + restart
+      - name: Rebuild and restart containers
         run: |
           cd "$HOME/docker/apps/demo-2"
           docker compose up -d --build
+
