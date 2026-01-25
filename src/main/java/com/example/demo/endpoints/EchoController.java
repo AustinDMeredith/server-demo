@@ -26,6 +26,4 @@ public class EchoController {
     }  
 }
 
-// random comment
-
 // curl -X POST http://localhost:8080/api/echo -H "Content-Type: application/json" -d '{"text":"hello spring"}'
