@@ -1,0 +1,18 @@
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Update repo in docker apps folder
+        run: |
+          APP_DIR="$HOME/docker/apps/demo-2"
+          if [ ! -d "$APP_DIR/.git" ]; then
+            git clone https://github.com/OWNER/REPO.git "$APP_DIR"
+          fi
+          cd "$APP_DIR"
+          git fetch --all
+          git reset --hard origin/main
+
+      - name: Rebuild + restart
+        run: |
+          cd "$HOME/docker/apps/demo-2"
+          docker compose up -d --build
