@@ -26,4 +26,8 @@ public class EchoController {
     }  
 }
 
+// ---unix based os---
 // curl -X POST http://localhost:8080/api/echo -H "Content-Type: application/json" -d '{"text":"hello spring"}'
+
+// ---windows---
+// iwr http://localhost:8080/api/echo -Method POST -Headers @{ "Content-Type" = "application/json" } -Body '{"text":"hello spring"}'
