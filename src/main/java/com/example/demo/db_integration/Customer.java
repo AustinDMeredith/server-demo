@@ -1,4 +1,4 @@
-package com.example.db_integration;
+package com.example.demo.db_integration;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

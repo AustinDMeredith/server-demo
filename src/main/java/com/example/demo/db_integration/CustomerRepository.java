@@ -1,4 +1,4 @@
-package com.example.db_integration;
+package com.example.demo.db_integration;
 
 import java.util.List;
 
