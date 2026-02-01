@@ -26,11 +26,13 @@ public class Main {
     public CommandLineRunner demo(CustomerRepository repository) {
         return (args) -> {
             // save a few customers
+            /*
             repository.save(new Customer("Jack", "Bauer", "jack.bauer@gmail.com"));
             repository.save(new Customer("Chloe", "O'Brian", "chloe.brian@gmail.com"));
             repository.save(new Customer("Kim", "Bauer", "kim.bauer@gmail.com"));
             repository.save(new Customer("David", "Palmer", "david.palmer@gmail.com"));
             repository.save(new Customer("Mike", "Dessler", "mike.dessler@gmail.com"));
+            */
 
             // fetch all customers
             logger.info("Customers found with findAll():");
