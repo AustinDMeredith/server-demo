@@ -20,7 +20,7 @@ public class CustomerController {
     @Autowired
     private CustomerRepository customerRepository;
 
-    @GetMapping
+    @GetMapping("/findAll")
     public List<Customer> getAllCustomers() {
         return customerRepository.findAll();
     }
