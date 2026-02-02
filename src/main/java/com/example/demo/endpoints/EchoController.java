@@ -7,11 +7,9 @@ package com.example.demo.endpoints;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestBody;
-/* 3rd Party Imports */
 
 /* Java Imports */
 import java.util.Map;
-/* Java Imports */
 
 @RestController
 public class EchoController {
