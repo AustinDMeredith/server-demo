@@ -14,7 +14,7 @@ import org.springframework.boot.testcontainers.service.connection.ServiceConnect
  * */
 @Testcontainers
 public abstract class MySqlTestContainerBase {
-    
+
     @ServiceConnection
     @SuppressWarnings("resource")
     static final MySQLContainer<?> mysql =
@@ -22,4 +22,5 @@ public abstract class MySqlTestContainerBase {
             .withDatabaseName("testdb")
             .withUsername("test")
             .withPassword("test");
+
 }
