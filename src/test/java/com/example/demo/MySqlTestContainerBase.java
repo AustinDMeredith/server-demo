@@ -7,8 +7,8 @@ import org.springframework.boot.testcontainers.service.connection.ServiceConnect
 
 @Testcontainers
 public abstract class MySqlTestContainerBase {
+
     @Container
     @ServiceConnection
     static final MySQLContainer<?> mysql = new MySQLContainer<>("mysql:8.0");
-
 }
