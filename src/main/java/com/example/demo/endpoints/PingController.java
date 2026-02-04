@@ -6,12 +6,10 @@ package com.example.demo.endpoints;
 /* 3rd Party Imports */
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-/* 3rd Party Imports */
 
 /* Java Imports */
 import java.util.Map;
 import java.time.Instant;
-/* Java Imports */
 
 // Tells Spring that this code describes an endpoint that should be made available over the web
 @RestController
