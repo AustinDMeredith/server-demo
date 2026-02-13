@@ -1,0 +1,8 @@
+services:
+  backend:
+    build: .
+    restart: unless-stopped
+    environment:
+      SPRING_DATASOURCE_USERNAME: ${MYSQL_USER}
+      SPRING_DATASOURCE_PASSWORD: ${MYSQL_PASSWORD}
+      DB_NAME: ${MYSQL_DATABASE}
