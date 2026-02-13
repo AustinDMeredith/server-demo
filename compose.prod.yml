@@ -1,0 +1,23 @@
+services:
+  backend:
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      SPRING_DATASOURCE_URL: jdbc:mysql://SWE2_Proj_DB:3306/${MYSQL_DATABASE}?useSSL=false&serverTimezone=UTC
+    networks:
+      - default
+      - proxy
+      - demo-net
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=proxy 
+      - traefik.http.routers.pfa-api.rule=Host(`api.foobar.com`)
+      - traefik.http.routers.pfa-api.entrypoints=websecure
+      - traefik.http.routers.pfa-api.tls=true
+      - traefik.http.routers.pfa-api.tls.certresolver=le
+      - traefik.http.services.pfa-api.loadbalancer.server.port=8080
+
+networks:
+  proxy:
+    external: true
+  pfa-db-net:
+    external: true
